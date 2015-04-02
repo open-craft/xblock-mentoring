@@ -55,8 +55,7 @@ class TestUpgrade(unittest.TestCase):
     @XBlock.register_temp_plugin(HtmlBlock, "html")
     def test_xml_upgrade(self, file_name):
         """
-        Convert a v1 mentoring block to v2 and then compare the resulting block to a
-        pre-converted one.
+        Convert a v1 mentoring block to v2 and then compare the resulting block to a pre-converted one.
         """
         with open("{}/{}_old.xml".format(xml_path, file_name)) as xmlfile:
             temp_node = etree.parse(xmlfile).getroot()
@@ -112,6 +111,7 @@ class TestUpgrade(unittest.TestCase):
                 )
             else:
                 self.assertEqual(getattr(block1, field_name), getattr(block2, field_name))
+
         # The children need to be equal.
         self.assertEqual(block1.has_children, block2.has_children)
 
