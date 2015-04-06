@@ -10,6 +10,7 @@ install:
     - "pip install -r $VIRTUAL_ENV/src/xblock-sdk/test-requirements.txt"
     - "pip install -r requirements.txt"
     - "pip uninstall -y xblock-mentoring && python setup.py sdist && pip install dist/xblock-mentoring-2.0.tar.gz"
+    - "pip install -r test_requirements.txt"
 script:
     - pep8 mentoring --max-line-length=120
     - pylint mentoring --disable=all --enable=function-redefined,undefined-variable,unused-variable
