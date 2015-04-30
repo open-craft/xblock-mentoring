@@ -47,7 +47,8 @@ try:
     from xmodule_modifiers import replace_jump_to_id_urls
 except:
     # TODO-WORKBENCH-WORKAROUND: To allow to load from the workbench
-    replace_jump_to_id_urls = lambda a, b, c, d, frag, f: frag
+    def replace_jump_to_id_urls(a, b, c, d, frag, f):
+        return frag
 
 from .utils import XBlockWithChildrenFragmentsMixin
 
@@ -139,8 +140,8 @@ class LightChildrenMixin(XBlockWithChildrenFragmentsMixin):
         Load light children from the `xml_content` attribute
         """
         self.light_children = []
-        no_content = (not hasattr(self, 'xml_content') or not self.xml_content
-                      or callable(self.xml_content))
+        no_content = (not hasattr(self, 'xml_content') or not self.xml_content or
+                      callable(self.xml_content))
         if no_content:
             return
 

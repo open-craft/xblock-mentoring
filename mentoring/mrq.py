@@ -110,4 +110,3 @@ class MRQBlock(QuestionnaireAbstractBlock):
         }
 
         return result
-
