@@ -1,0 +1,31 @@
+[MASTER]
+ignore=migrations
+
+[REPORTS]
+reports=no
+
+[FORMAT]
+max-line-length=120
+
+[MESSAGES CONTROL]
+disable=
+    abstract-class-not-used,
+    attribute-defined-outside-init,
+    broad-except,
+    cyclic-import,
+    fixme,
+    invalid-name,
+    locally-disabled,
+    maybe-no-member,
+    no-self-use,
+    protected-access,
+    star-args,
+    too-few-public-methods,
+    too-many-public-methods,
+    too-many-ancestors,
+    too-many-arguments,
+    too-many-locals,
+    unused-argument
+
+[SIMILARITIES]
+min-similarity-lines=6
